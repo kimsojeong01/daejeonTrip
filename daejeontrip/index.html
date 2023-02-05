@@ -145,7 +145,7 @@
         url: "https://apis.data.go.kr/6300000/openapi2022/tourspot/gettourspot?serviceKey=DHnifGzphsHBU9ZZZOIQ2p7AKpc0MqGwDJLWOa5EdBxLHj%2F3orjE8PmWVyWC%2F1lbJES2Y4u2gGZjNfGygryQlA%3D%3D&pageNo=1&numOfRows=100", //값을 가져올 경로
         dataType: "json", //html, xml, text, script, json, jsonp 등 다양하게 쓸 수 있음
         success: function (response) {   //요청 성공시 실행될 메서드
-          console.log("통신성공");
+          // console.log("통신성공");
           
           // #table 삭제 후 다시 붙여넣기
           // $("#table").remove()
@@ -163,8 +163,8 @@
           // 0부터 99까지 출력
           // var random = Math.random(nm.length * 100);
           var random = Math.random(nm.length) * 100;
-          console.log(random);
-          console.log(Math.round(random));
+          // console.log(random);
+          // console.log(Math.round(random));
 
           var tourspotNm = nm[Math.round(random)]['tourspotNm']
           var tourspotAddr = nm[Math.round(random)]['tourspotAddr']
@@ -213,7 +213,7 @@
         }
       })
     }
-    q1()
+    q1();
 
     function q2() {
       $('#weatherarea').empty();
@@ -225,20 +225,20 @@
       fetch('http://goweather.herokuapp.com/weather/daejeon')
       .then((response) => response.json())
       .then((data) => {
-          credentials: "include" // 클라이언트와 서버가 통신할때 쿠키와 같은 인증 정보 값을 공유하겠다는 설정
-          // 날씨 정보 확인
-          // console.log(data['temperature'])
-          
-          var weatherData = data['temperature']
-          console.log(weatherData);
+        credentials: "include" // 클라이언트와 서버가 통신할때 쿠키와 같은 인증 정보 값을 공유하겠다는 설정
+        // 날씨 정보 확인
+        // console.log(data['temperature'])
+        
+        var weatherData = data['temperature']
+        // console.log(weatherData);
 
-          var weather = document.querySelector('#weather');
-          // console.log(weather);
+        var weather = document.querySelector('#weather');
+        // console.log(weather);
 
-          var temp_html = `<h2>대전의 날씨⛅</h2>
-                            <p>현재 : <span id="weather">${weatherData}</span></p>`
-          // console.log(temp_html);
-          $('#weatherarea').append(temp_html)
+        var temp_html = `<h2>대전의 날씨⛅</h2>
+                          <p>현재 : <span id="weather">${weatherData}</span></p>`
+        // console.log(temp_html);
+        $('#weatherarea').append(temp_html)
       });
     }
     q2(); //맨처음에 한번 실행
@@ -258,8 +258,8 @@
       }
       getClock(); //맨처음에 한번 실행
     }
-    call(); //맨처음에 한번 실행
-    setInterval(call, 1000); //1초 주기로 새로실행
+    // call(); //맨처음에 한번 실행
+    // setInterval(call, 1000); //1초 주기로 새로실행
 
 
   </script>
